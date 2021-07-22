@@ -1,11 +1,12 @@
 import './App.css';
+import { FaRegTimesCircle, FaRegCircle} from "react-icons/fa";
 
 const App = () => {
   return (
     <div id="main">
-      <h1>Tik-Tak-Toe</h1>
+      <FaRegTimesCircle size="150"/>
+      <FaRegCircle size="150"/>
     </div>
-    
   );
 }
 
