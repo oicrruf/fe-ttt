@@ -1,4 +1,4 @@
-import { TicTacToeBtns } from ".";
+import { TicTacToeBtns } from "./TicTacToeBtns";
 
 const Home = () => {
   return (

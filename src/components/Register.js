@@ -1,5 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { Button } from "./Formulario/Button.js";
+import { RegistroInput } from "./Formulario/RegistroInput.js";
+import "./Formulario/FormReg.css";
 
-const Register = () => <h1>Registrarse</h1>;
+function Register() {
+  return(<h1>Register</h1>)
+}
 
 export { Register };
+
+

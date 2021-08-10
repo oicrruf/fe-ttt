@@ -1,15 +1,76 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Register } from "./components/Register";
+import { Login } from "./components/Login";
+import { Home } from "./components/Home";
+import { Friends } from "./components/Friends";
+import { Score } from "./components/Score";
+import { BestScore } from "./components/BestScore";
 import "./App.css";
-import { Navbar } from "./components";
 
-const App = () => {
+export default function App() {
   return (
-    <>
-      <div id="main">
-        <Navbar />
-      </div>
-    </>
-  );
-};
+    <Router>
+      <div className="mainContainer">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
+            <li>
+              <Link to="/friends">Friends</Link>
+            </li>
+            <li>
+              <Link to="/score">Score</Link>
+            </li>
+            <li>
+              <Link to="/bestscore">Best Score</Link>
+            </li>
+          </ul>
+        </nav>
 
-export default App;
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/home">
+            <Home />
+          </Route>
+
+          <Route path="/login">
+            <Login />
+          </Route>
+
+          <Route path="/register">
+            <Register />
+          </Route>
+
+          <Route path="/friends">
+            <Friends />
+          </Route>
+
+          <Route path="/score">
+            <Score />
+          </Route>
+
+          <Route path="/bestscore">
+            <BestScore />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
+}
