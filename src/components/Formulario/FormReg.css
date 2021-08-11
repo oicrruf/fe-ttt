@@ -1,0 +1,10 @@
+.formReg{
+    margin:30 px auto;
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    border-color: rgb(52, 6, 66);
+ 
+}
