@@ -1,4 +1,6 @@
 import { TicTacToeBtns } from "./TicTacToeBtns";
+import Swal from 'sweetalert2'
+
 
 const Home = () => {
   return (
@@ -15,5 +17,35 @@ const Home = () => {
     </>
   );
 };
+
+
+
+const saveLocalStorage = () =>{
+  
+  let nickname  = Swal.fire( 
+    
+    {
+      input: 'textarea',
+      inputLabel: 'Ingresa nickname si no estas registrado',
+      inputPlaceholder: 'Escribe aqui',
+      inputAttributes: {
+        'aria-label': 'Escribe aqui'
+      },
+      showCancelButton: true,
+      //timer: "4000"   //cierra automaticamente la ventana
+    }
+  
+  ).then(resultado => {
+    if (resultado.value) {
+        let nickname = resultado.value;
+        localStorage.setItem("nickname", nickname);
+    }
+});
+
+  console.log(nickname)
+
+}
+
+saveLocalStorage()
 
 export { Home };
