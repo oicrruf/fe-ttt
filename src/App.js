@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -15,6 +15,12 @@ import './App.css';
 import { Game } from './components/Game';
 
 export default function App() {
+	const [token, setToken] = useState(Date.now());
+
+	function newToken() {
+		setToken(Date.now());
+	}
+
 	return (
 		<Router>
 			<div className='mainContainer'>
@@ -53,8 +59,9 @@ export default function App() {
 						<li className='link'>
 							<NavLink
 								exact
-								to={`/game/${Date.now()}`}
+								to={`/game/${token}`}
 								activeClassName='-active'
+								onClick={newToken}
 							>
 								New Game
 							</NavLink>
