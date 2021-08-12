@@ -1,18 +1,17 @@
 import React from 'react';
 import {
 	BrowserRouter as Router,
-	Switch,
-	Route,
 	NavLink,
+	Route,
+	Switch,
 } from 'react-router-dom';
-import { Register } from './components/Register';
-import { Login } from './components/Login';
-import { Home } from './components/Home';
-import { Friends } from './components/Friends';
-import { Score } from './components/Score';
-import { BestScore } from './components/BestScore';
 import './App.css';
-import { Game } from './components/Game';
+import { BestScore } from './components/BestScore';
+import { Friends } from './components/Friends';
+import { Home } from './components/Home';
+import { Login } from './components/Login';
+import { Register } from './components/Register';
+import { Score } from './components/Score';
 
 export default function App() {
 	return (
@@ -21,7 +20,11 @@ export default function App() {
 				<nav>
 					<ul>
 						<li className='link'>
-							<NavLink exact to='/' activeClassName='-active'>
+							<NavLink
+								exact
+								to={`/${Date.now()}/${'daniels'}`}
+								activeClassName='-active'
+							>
 								Home
 							</NavLink>
 						</li>
@@ -50,27 +53,14 @@ export default function App() {
 								Best Score
 							</NavLink>
 						</li>
-						<li className='link'>
-							<NavLink
-								exact
-								to={`/game/${Date.now()}`}
-								activeClassName='-active'
-							>
-								New Game
-							</NavLink>
-						</li>
 					</ul>
 				</nav>
 
 				{/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
 				<Switch>
-					<Route exact path='/'>
+					<Route exact path='/:time/:dev'>
 						<Home />
-					</Route>
-
-					<Route exact path='/game/:id'>
-						<Game />
 					</Route>
 
 					<Route exact path='/login'>
