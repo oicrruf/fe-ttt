@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
 import { Register } from "./components/Register";
 import { Login } from "./components/Login";
 import { Home } from "./components/Home";
@@ -14,23 +19,35 @@ export default function App() {
       <div className="mainContainer">
         <nav>
           <ul>
-            <li>
-              <Link to="/home">Home</Link>
+            <li className="link">
+              <NavLink exact to="/" activeClassName="-active">
+                Home
+              </NavLink>
             </li>
-            <li>
-              <Link to="/login">Login</Link>
+            <li className="link">
+              <NavLink exact to="/login" activeClassName="-active">
+                Login
+              </NavLink>
             </li>
-            <li>
-              <Link to="/register">Register</Link>
+            <li className="link">
+              <NavLink exact to="/register" activeClassName="-active">
+                Register
+              </NavLink>
             </li>
-            <li>
-              <Link to="/friends">Friends</Link>
+            <li className="link">
+              <NavLink exact to="/friends" activeClassName="-active">
+                Friends
+              </NavLink>
             </li>
-            <li>
-              <Link to="/score">Score</Link>
+            <li className="link">
+              <NavLink exact to="/score" activeClassName="-active">
+                Score
+              </NavLink>
             </li>
-            <li>
-              <Link to="/bestscore">Best Score</Link>
+            <li className="link">
+              <NavLink exact to="/bestscore" activeClassName="-active">
+                Best Score
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -38,27 +55,27 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/home">
+          <Route exact path="/">
             <Home />
           </Route>
 
-          <Route path="/login">
+          <Route exact path="/login">
             <Login />
           </Route>
 
-          <Route path="/register">
+          <Route exact path="/register">
             <Register />
           </Route>
 
-          <Route path="/friends">
+          <Route exact path="/friends">
             <Friends />
           </Route>
 
-          <Route path="/score">
+          <Route exact path="/score">
             <Score />
           </Route>
 
-          <Route path="/bestscore">
+          <Route exact path="/bestscore">
             <BestScore />
           </Route>
         </Switch>
