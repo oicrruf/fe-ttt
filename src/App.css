@@ -1,4 +1,9 @@
-.mainContainer{
-    display:flex;
-    
+.mainContainer {
+  display: flex;
+}
+.link {
+  padding: 7.5px 15px 7.5px 15px;
+}
+.link .-active {
+  font-weight: bold;
 }
