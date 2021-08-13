@@ -1,3 +1,4 @@
+import React from "react";
 import { TicTacToeBtns } from "./TicTacToeBtns";
 
 const Home = () => {
