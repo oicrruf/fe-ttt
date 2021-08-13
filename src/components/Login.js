@@ -41,9 +41,10 @@ function Login() {
           placeholder="Ingresa tu contraseña"
           onChange={onInputChange}
         />
-        <button className="btnRegistro" onClick={submit}>Login</button>
-             {/*  <Button onClick={submit} /> */}
-         
+        <button className="btnRegistro" onClick={submit}>
+          Login
+        </button>
+        {/*  <Button onClick={submit} /> */}
       </form>
     </>
   );
