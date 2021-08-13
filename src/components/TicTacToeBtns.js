@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FaRegTimesCircle, FaRegCircle } from "react-icons/fa";
 
 const selectRegion = (id) => {
