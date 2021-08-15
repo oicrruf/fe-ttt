@@ -19,7 +19,7 @@ function Register() {
       if(!valores.user){
         errores.user='Capture un nombre de usuario'
         console.log('user');
-      }else if(!/^[a-zA-Z0-9\_\-]{4,16}$/.test(valores.user)){errores.user='Este campos puede contener, letras, numeros, guion y guions bajo'}
+      }else if(!/^[a-zA-Z0-9\_\-]{4,16}$/.test(valores.user)){errores.user='Este campos puede contener, letras, numeros, guion y guion bajo'}
       return errores;
     }}
     onSubmit={(valores,{resetForm})=>{
@@ -32,6 +32,7 @@ function Register() {
       handleChange, handleBlur})=>(
         <form className='formReg' onSubmit={handleSubmit}>
         {console.log(errors)}
+        <label>User</label>
         <input
           id='user'
           className='registroInput'
@@ -41,6 +42,7 @@ function Register() {
           onChange ={handleChange}
           onBlur={handleBlur}
         />
+        <label>Name</label>
         <input
         id='nombre'
         className='registroInput'
@@ -50,6 +52,7 @@ function Register() {
         onChange={handleChange}
         onBlur={handleBlur}
         />
+        <label>Password</label>
         <input 
           id='pass'
           className='registroInput'
@@ -59,6 +62,7 @@ function Register() {
           onChange={handleChange}
           onBlur={handleBlur}
         />
+        <label>Repeat password</label>
         <input
           id='confirmation'
           className='registroInput'
@@ -68,6 +72,7 @@ function Register() {
           onChange={handleChange}
           onBlur={handleBlur}
         />
+        <label>E-mail</label>
         <input 
           id='email'
           className='registroInput'
