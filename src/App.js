@@ -49,6 +49,11 @@ export default function App() {
                 Best Score
               </NavLink>
             </li>
+            <li className="link">
+              <NavLink exact to="/statics" activeClassName="-active">
+                Statics
+              </NavLink>
+            </li>
           </ul>
         </nav>
 
