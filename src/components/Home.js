@@ -1,4 +1,5 @@
 import { TicTacToeBtns } from "./TicTacToeBtns";
+import React from "react";
 import Swal from 'sweetalert2'
 
 
@@ -46,7 +47,7 @@ const saveLocalStorage = () =>{
           })
           
           .catch(error => {
-            Swal.showValidationMessage(
+            Swal.resetValidationMessage(
               `Request failed: ${error}`
             )
           })

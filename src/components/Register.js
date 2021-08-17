@@ -4,9 +4,7 @@ import { RegistroInput } from "./Formulario/RegistroInput.js";
 import "./Formulario/FormReg.css";
 
 function Register() {
-  return(<h1>Register</h1>)
+  return <h1>Register</h1>;
 }
 
 export { Register };
-
-
