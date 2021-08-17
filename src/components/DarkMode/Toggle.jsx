@@ -14,7 +14,7 @@ export const Toggle = () => {
   }
 
   return (
-    <>
+    <div>
       <input
         type="checkbox"
         className="checkbox"
@@ -23,10 +23,8 @@ export const Toggle = () => {
         onChange={(e) => toggleTheme(e)}
       />
       <label className="label" htmlFor="chk">
-        <i className="fas fa-moon"></i>
-        <i className="fas fa-sun"></i>
         <div className="ball"></div>
       </label>
-    </>
+    </div>
   );
 };

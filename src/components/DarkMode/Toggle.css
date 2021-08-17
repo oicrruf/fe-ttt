@@ -14,7 +14,6 @@
   position: relative;
   height: 26px;
   width: 50px;
-  transform: scale(1.5);
 }
 
 .label .ball {
@@ -35,8 +34,7 @@
 
 .fa-moon {
   color: #f1c40f;
-  width: 1px;
-  height: 1px;
+  transform: translateX(-8x);
 }
 
 .fa-sun {
