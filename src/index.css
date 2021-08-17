@@ -1,13 +1,17 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  @apply light;
+}
+
 body {
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-:root {
-  @apply .light;
 }
 
 .dark {
@@ -25,7 +29,3 @@ code {
   --color-text-secondary: #4a5568;
   --color-text-accent: #2b6cb0;
 }
-
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
