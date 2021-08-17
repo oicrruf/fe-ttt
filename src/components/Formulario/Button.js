@@ -1,11 +1,12 @@
-import './Button.css';
+import React from "react";
+import "./Button.css";
 
-function Button(){
-    return(
-        <>
-        <button className='btnRegistro' >Registrandome</button>
-        </>
-    )
+function Button() {
+  return (
+    <>
+      <button className="btnRegistro">Registrandome</button>
+    </>
+  );
 }
 
-export {Button};
+export { Button };

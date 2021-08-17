@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import { Home } from "./";
-import { Register } from './Register';
-import { Login } from './Login';
+import { Register } from "./Register";
+import { Login } from "./Login";
 
 const Navbar = () => {
   return (
@@ -21,18 +21,24 @@ const Navbar = () => {
       <nav>
         <ul className="grid grid-cols-3 gap-4">
           <li>
-            <Link className="line" to="/">Home</Link>
+            <Link className="line" to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link className="line" to="/register">Register</Link>
+            <Link className="line" to="/register">
+              Register
+            </Link>
           </li>
           <li>
-            <Link className="line" to="/login">Login</Link>
+            <Link className="line" to="/login">
+              Login
+            </Link>
           </li>
         </ul>
       </nav>
     </Router>
-  )
+  );
 };
 
 export { Navbar };
