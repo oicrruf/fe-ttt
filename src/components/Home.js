@@ -2,7 +2,6 @@ import React from "react";
 import { TicTacToeBtns } from "./TicTacToeBtns";
 
 const Home = () => {
-
   return (
     <>
       <div className="bg-gray-50">
