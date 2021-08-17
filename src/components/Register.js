@@ -29,7 +29,7 @@ function Register() {
         errores.name='Por favor capture su Nombre'
         // console.log('name');
       }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.name)){
-        errores.name='El nombre solo puede contener, letras y numeros';
+        errores.name='El nombre solo puede contener, letras y espacios';
       }
 
       if(!valores.password){
@@ -45,16 +45,14 @@ function Register() {
       }if(valores.repeat_pass !== valores.password){
         errores.repeat_pass='La contraseña y la confirmacion no son iguales';
       }
-      // }else 
-      // errores.repeat_pass='La contraseña puede contener de 4 a 12 caracteres';
-
-      
+          
       if(!valores.email){
         errores.email='Por favor ingrese su correo'
         // console.log('email');
       }else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email)){
         errores.email='El correo solo puede contener, letras, numeros, puntos, guiones y guion bajo';
       }
+
       return errores;
     }}
     onSubmit={(valores,{resetForm})=>{
