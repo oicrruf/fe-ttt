@@ -6,8 +6,8 @@ import "./Formulario/FormReg.css";
 
 function Register() {
   const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
-  
-  return(
+
+  return (
     <Formik
       initialValues={{
         user: "",
@@ -51,21 +51,25 @@ function Register() {
             "La contraseña y la confirmacion no son iguales";
         }
 
-      
-      if(!valores.email){
-        errores.email='Por favor ingrese su correo'
-        // console.log('email');
-      }else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.email)){
-        errores.email='El correo solo puede contener, letras, numeros, puntos, guiones y guion bajo';
-      }
-      return errores;
-    }}
-    onSubmit={(valores,{resetForm})=>{
-      resetForm();
-      console.log('Formulario enviado');
-      cambiarFormularioEnviado(true);
-      setTimeout(()=> cambiarFormularioEnviado(false),4000);
-    }}
+        if (!valores.email) {
+          errores.email = "Por favor ingrese su correo";
+          // console.log('email');
+        } else if (
+          !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
+            valores.email
+          )
+        ) {
+          errores.email =
+            "El correo solo puede contener, letras, numeros, puntos, guiones y guion bajo";
+        }
+        return errores;
+      }}
+      onSubmit={(valores, { resetForm }) => {
+        resetForm();
+        console.log("Formulario enviado");
+        cambiarFormularioEnviado(true);
+        setTimeout(() => cambiarFormularioEnviado(false), 4000);
+      }}
     >
       {({
         errors,
