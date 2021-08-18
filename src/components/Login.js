@@ -33,8 +33,14 @@ function Login() {
       }}
       
       >
-        
-        {({errors, touched, values, handleSubmit, handleChange, handleBlur}) => (
+        {({
+          errors,
+          touched,
+          values,
+          handleSubmit,
+          handleChange,
+          handleBlur,
+        }) => (
           <form className="formReg" onSubmit={handleSubmit}>
             {console.log(errors)}
             <label>Usuario</label>
@@ -63,7 +69,6 @@ function Login() {
 
             <button className="btnRegistro">Login</button>
             {/*  <Button onClick={submit} /> */}
-
           </form>
         )}
       </Formik>
