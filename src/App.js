@@ -11,6 +11,7 @@ import { Home } from "./components/Home";
 import { Friends } from "./components/Friends";
 import { Score } from "./components/Score";
 import { BestScore } from "./components/BestScore";
+import { Statics } from "./components/Statics"
 import "./App.css";
 
 export default function App() {
@@ -82,6 +83,10 @@ export default function App() {
 
           <Route exact path="/bestscore">
             <BestScore />
+          </Route>
+
+          <Route exact path="/statics">
+            <Statics />
           </Route>
         </Switch>
       </div>
