@@ -20,7 +20,7 @@ const Home = () => {
 
 const saveLocalStorage = () => {
   let nickname = Swal.fire({
-    input: "textarea",
+    input: "text",
     inputLabel: "Ingresa nickname si no estas registrado",
     inputPlaceholder: "Escribe aqui",
     inputAttributes: {
