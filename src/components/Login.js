@@ -1,51 +1,86 @@
 import React, { useState, useEffect } from "react";
-//import { Button } from "./Formulario/Button.js";
-//import { RegistroInput } from "./Formulario/RegistroInput.js";
+import { Formik } from "formik";
 import "./Formulario/FormReg.css";
 
 function Login() {
-  const [userValue, setUserValue] = useState("");
-  const [passwordValue, setPasswordValue] = useState("");
-
-  const submit = () => {
-    if (userValue === "" || passwordValue === "") {
-      alert("No data");
-    } else {
-      alert(`Los datos se enviaron ${userValue} y ${passwordValue}`);
-    }
-  };
-
-  const onInputChange = (e) => {
-    if (e.target.id === "user") {
-      setUserValue(e.target.value);
-      console.log(userValue);
-    } else if (e.target.id === "password") {
-      setPasswordValue(e.target.value);
-      console.log(passwordValue);
-    }
-  };
   return (
     <>
-      <form className="formReg">
-        <input
-          id="user"
-          className="registroInput"
-          type="text"
-          placeholder="Ingresa tu usuario"
-          onChange={onInputChange}
-        />
-        <input
-          id="password"
-          className="registroInput"
-          type="text"
-          placeholder="Ingresa tu contraseña"
-          onChange={onInputChange}
-        />
-        <button className="btnRegistro" onClick={submit}>
-          Login
-        </button>
-        {/*  <Button onClick={submit} /> */}
-      </form>
+      <Formik
+        initialValues={{
+          nombre: "",
+          password: "",
+        }}
+        validate={(valores) => {
+          let errores = {};
+          if (!valores.nombre) {
+            errores.nombre = "Por favor ingresa un nombre";
+            console.log("nombre?");
+          } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
+            errores.nombre = "El nombre solo puede contener letras y espacios";
+          }
+          if (!valores.password) {
+            errores.password = "Por favor ingrese su password";
+            console.log("password?");
+          }
+          return errores;
+        }}
+        onSubmit={(valores, { resetForm }) => {
+          resetForm();
+          console.log("Formulario enviado");
+
+          const user = {
+            nombre: valores.nombre,
+            password: valores.password,
+          };
+
+          const userString = JSON.stringify(user);
+
+          localStorage.setItem("Usuario", userString);
+        }}
+      >
+        {({
+          errors,
+          touched,
+          values,
+          handleSubmit,
+          handleChange,
+          handleBlur,
+        }) => (
+          <form className="formReg" onSubmit={handleSubmit}>
+            {console.log(errors)}
+            <label>Usuario</label>
+            <input
+              id="nombre"
+              className="registroInput"
+              type="text"
+              placeholder="Ingresa tu usuario"
+              value={values.nombre}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            {touched.nombre && errors.nombre && (
+              <div className="error">{errors.nombre}</div>
+            )}
+
+            <label>Password</label>
+            <input
+              id="password"
+              className="registroInput"
+              type="password"
+              placeholder="Capture la contraseña"
+              value={values.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            {touched.password && errors.password && (
+              <div className="error">{errors.password}</div>
+            )}
+
+            <button className="btnRegistro">Login</button>
+            {/*  <Button onClick={submit} /> */}
+          </form>
+        )}
+      </Formik>
     </>
   );
 }
