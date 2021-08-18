@@ -41,10 +41,20 @@ const TicTacToeBtns = () => {
   };
 
   useEffect(() => {
-    let positions = [ p1.current, p2.current, p3.current, p4.current, p5.current, p6.current, p7.current, p8.current, p9.current ]
+    let positions = [
+      p1.current,
+      p2.current,
+      p3.current,
+      p4.current,
+      p5.current,
+      p6.current,
+      p7.current,
+      p8.current,
+      p9.current,
+    ];
     let random = Math.floor(Math.random() * (9 - 1)) + 1;
-    positions[random].click()
-  }, [])
+    positions[random].click();
+  }, []);
 
   return (
     <div>
