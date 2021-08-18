@@ -1,27 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   NavLink,
+  Route,
+  Switch,
 } from "react-router-dom";
-import { Register } from "./components/Register";
-import { Login } from "./components/Login";
-import { Home } from "./components/Home";
-import { Friends } from "./components/Friends";
-import { Score } from "./components/Score";
-import { BestScore } from "./components/BestScore";
-import { Statics } from "./components/Statics";
 import "./App.css";
+import { BestScore } from "./components/BestScore";
+import { Friends } from "./components/Friends";
+import { Game } from "./components/Game";
+import { Home } from "./components/Home";
+import { Login } from "./components/Login";
+import { Register } from "./components/Register";
+import { Score } from "./components/Score";
+import { Statics } from "./components/Statics";
 
 export default function App() {
+  const [token, setToken] = useState(Date.now());
+
+  function newToken() {
+    setToken(Date.now());
+  }
+
   return (
     <Router>
       <div className="mainContainer">
         <nav>
           <ul>
             <li className="link">
-              <NavLink exact to="/" activeClassName="-active">
+              <NavLink exact to={"/"} activeClassName="-active">
                 Home
               </NavLink>
             </li>
@@ -53,6 +60,16 @@ export default function App() {
             <li className="link">
               <NavLink exact to="/statics" activeClassName="-active">
                 Statics
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                exact
+                to={`/game/${token}`}
+                activeClassName="-active"
+                onClick={newToken}
+              >
+                New Game
               </NavLink>
             </li>
           </ul>
@@ -87,6 +104,10 @@ export default function App() {
 
           <Route exact path="/statics">
             <Statics />
+          </Route>
+
+          <Route exact path="/game/:id">
+            <Game />
           </Route>
         </Switch>
       </div>
