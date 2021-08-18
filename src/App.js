@@ -71,6 +71,11 @@ export default function App() {
                   New Game
                 </NavLink>
               </li>
+              <li className="link">
+                <NavLink exact to="/statics" activeClassName="-active">
+                  Statics
+                </NavLink>
+              </li>
               <li className="link flex text-black dark:text-white">
                 <Toggle context={ThemeContext}></Toggle>
               </li>
@@ -107,96 +112,12 @@ export default function App() {
             <Route exact path="/game/:id">
               <Game />
             </Route>
+            <Route exact path="/statics">
+              <Statics />
+            </Route>
           </Switch>
         </div>
       </ThemeProvider>
-      <div className="mainContainer">
-        <nav>
-          <ul>
-            <li className="link">
-              <NavLink exact to={"/"} activeClassName="-active">
-                Home
-              </NavLink>
-            </li>
-            <li className="link">
-              <NavLink exact to="/login" activeClassName="-active">
-                Login
-              </NavLink>
-            </li>
-            <li className="link">
-              <NavLink exact to="/register" activeClassName="-active">
-                Register
-              </NavLink>
-            </li>
-            <li className="link">
-              <NavLink exact to="/friends" activeClassName="-active">
-                Friends
-              </NavLink>
-            </li>
-            <li className="link">
-              <NavLink exact to="/score" activeClassName="-active">
-                Score
-              </NavLink>
-            </li>
-            <li className="link">
-              <NavLink exact to="/bestscore" activeClassName="-active">
-                Best Score
-              </NavLink>
-            </li>
-            <li className="link">
-              <NavLink exact to="/statics" activeClassName="-active">
-                Statics
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                exact
-                to={`/game/${token}`}
-                activeClassName="-active"
-                onClick={newToken}
-              >
-                New Game
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-
-          <Route exact path="/login">
-            <Login />
-          </Route>
-
-          <Route exact path="/register">
-            <Register />
-          </Route>
-
-          <Route exact path="/friends">
-            <Friends />
-          </Route>
-
-          <Route exact path="/score">
-            <Score />
-          </Route>
-
-          <Route exact path="/bestscore">
-            <BestScore />
-          </Route>
-
-          <Route exact path="/statics">
-            <Statics />
-          </Route>
-
-          <Route exact path="/game/:id">
-            <Game />
-          </Route>
-        </Switch>
-      </div>
     </Router>
   );
 }
