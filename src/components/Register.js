@@ -6,6 +6,7 @@ import "./Formulario/FormReg.css";
 
 function Register() {
   const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
+  
   return(
     <Formik
      initialValues={{
@@ -59,7 +60,7 @@ function Register() {
     }}
     onSubmit={(valores,{resetForm})=>{
       resetForm();
-      console.log('Formularios enviado');
+      console.log('Formulario enviado');
       cambiarFormularioEnviado(true);
       setTimeout(()=> cambiarFormularioEnviado(false),4000);
     }}

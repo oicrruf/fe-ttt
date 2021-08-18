@@ -8,7 +8,7 @@ function Login() {
       <Formik
       initialValues={{
         nombre:'',
-        email:''
+        password:''
       }}
       validate={(valores)=>{
         let errores={};
@@ -18,6 +18,10 @@ function Login() {
         }else if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)){
           errores.nombre='El nombre solo puede contener letras y espacios';
         }
+        if(!valores.password){
+          errores.password='Por favor ingrese su password'
+          console.log('password?');
+        }
         return errores;
       }}
       
@@ -25,12 +29,14 @@ function Login() {
         resetForm();
         console.log('Formulario enviado');
         console.log(valores.nombre);
+        console.log(valores.password);
       }}
       >
         
         {({errors, touched, values, handleSubmit, handleChange, handleBlur}) => (
           <form className="formReg" onSubmit={handleSubmit}>
             {console.log(errors)}
+            <label>Usuario</label>
             <input
               id="nombre"
               className="registroInput"
@@ -39,8 +45,20 @@ function Login() {
               value={values.nombre}
               onChange={handleChange}
               onBlur={handleBlur}
-            />
+              />
            {touched.nombre && errors.nombre && <div className='error'>{errors.nombre}</div>}
+
+           <label>Password</label>
+          <input 
+           id='password'
+           className='registroInput'
+           type='password'
+           placeholder='Capture la contraseña'
+           value={values.password}
+           onChange={handleChange}
+           onBlur={handleBlur}
+          />
+          {touched.password && errors.password&& <div className='error'>{errors.password}</div>}
 
             <button className="btnRegistro">Login</button>
             {/*  <Button onClick={submit} /> */}
