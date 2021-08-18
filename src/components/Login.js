@@ -31,6 +31,7 @@ function Login() {
         console.log(valores.nombre);
         console.log(valores.password);
       }}
+      
       >
         
         {({errors, touched, values, handleSubmit, handleChange, handleBlur}) => (
