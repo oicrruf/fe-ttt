@@ -6,7 +6,8 @@ import "./Formulario/FormReg.css";
 
 function Register() {
   const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
-  return (
+  //const [botonHabilitado, cambiarBotonHabilitado] = useState(true);
+  return (   
     <Formik
       initialValues={{
         user: "",
@@ -14,6 +15,7 @@ function Register() {
         password: "",
         repeat_pass: "",
         email: "",
+        terminos: false
       }}
       validate={(valores) => {
         let errores = {};
@@ -62,13 +64,32 @@ function Register() {
             "El correo solo puede contener, letras, numeros, puntos, guiones y guion bajo";
         }
 
+        if (valores.terminos == false) {
+          errores.check = "Debes aceptar los términos y condiciones";
+          console.log(valores.check);
+        }
+
         return errores;
+
+       // if (valores.namevalores.password && valores.repeat_pass && )
+
       }}
       onSubmit={(valores, { resetForm }) => {
         resetForm();
-        console.log("Formularios enviado");
-        cambiarFormularioEnviado(true);
+        console.log("Formulario enviado");
         setTimeout(() => cambiarFormularioEnviado(false), 4000);
+
+        const formularioRegistro = {
+          user: valores.user,
+          name: valores.name,
+          password: valores.password,
+          email: valores.name
+        }
+
+        const formularioString = JSON.stringify(formularioRegistro);
+
+        localStorage.setItem("Formulario", formularioString)
+
       }}
     >
       {({
@@ -149,10 +170,20 @@ function Register() {
           {touched.email && errors.email && (
             <div className="error">{errors.email}</div>
           )}
+
           <br />
           <label>
-            <input id="terminos" type="checkbox" />
+            <input
+              id="terminos"
+              type="checkbox" 
+              value={values.check}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
             Acepto los terminos y condiciones
+            {errors.check && (
+              <div className="error">{errors.check}</div>
+            )}
           </label>
 
           <button className="btnRegistro">Enviar</button>
