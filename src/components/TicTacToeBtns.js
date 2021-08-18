@@ -6,20 +6,6 @@ const TicTacToeBtns = () => {
   const [number, setNumber] = useState(0);
   const [click, setClick] = useState(0);
 
-  // function TextInputWithFocusButton() {
-  //   const inputEl = useRef(null);
-  //   const onButtonClick = () => {
-  //     // `current` apunta al elemento de entrada de texto montado
-  //     inputEl.current.focus();
-  //   };
-  //   return (
-  //     <>
-  //       <input ref={inputEl} type="text" />
-  //       <button onClick={onButtonClick}>Focus the input</button>
-  //     </>
-  //   );
-  // }
-
   const p1 = useRef(1);
   const p2 = useRef(2);
   const p3 = useRef(3);
