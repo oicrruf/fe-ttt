@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import React from "react";
 import { FaRegTimesCircle, FaRegCircle } from "react-icons/fa";
 
@@ -6,13 +6,13 @@ const selectRegion = (id) => {
   console.log(id);
 };
 const TicTacToeBtns = () => {
-  const [ number, setNumber ] = useState(0)
-  const [ click, setClick] = useState(0)
+  const [number, setNumber] = useState(0);
+  const [click, setClick] = useState(0);
 
   const sumar = () => {
-    setNumber(number + 1)
-    setClick(click + 1)
-  }
+    setNumber(number + 1);
+    setClick(click + 1);
+  };
 
   return (
     <div>
