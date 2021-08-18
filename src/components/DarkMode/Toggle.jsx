@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../../context/themeContext";
 import "./Toggle.css";
 
-export const Toggle = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+export const Toggle = ({ context }) => {
+  const { theme, setTheme } = useContext(context);
 
   function isDark() {
     return theme === "dark";
@@ -14,17 +13,22 @@ export const Toggle = () => {
   }
 
   return (
-    <div>
-      <input
-        type="checkbox"
-        className="checkbox"
-        id="chk"
-        checked={isDark()}
-        onChange={(e) => toggleTheme(e)}
-      />
-      <label className="label" htmlFor="chk">
-        <div className="ball"></div>
+    <>
+      <label className="inline" htmlFor="chk">
+        DarkMode:
       </label>
-    </div>
+      <div className="inline-flex items-center">
+        <input
+          type="checkbox"
+          className="checkbox"
+          id="chk"
+          checked={isDark()}
+          onChange={(e) => toggleTheme(e)}
+        />
+        <label className="label ml-2" htmlFor="chk">
+          <div className="ball"></div>
+        </label>
+      </div>
+    </>
   );
 };

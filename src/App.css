@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .mainContainer {
   display: flex;
 }
@@ -12,4 +11,3 @@
 .link .-active {
   font-weight: bold;
 }
-
