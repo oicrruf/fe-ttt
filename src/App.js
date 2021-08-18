@@ -13,6 +13,7 @@ import { Home } from "./components/Home";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { Score } from "./components/Score";
+import { Statics } from "./components/Statics";
 
 export default function App() {
   const [token, setToken] = useState(Date.now());
@@ -57,6 +58,11 @@ export default function App() {
               </NavLink>
             </li>
             <li className="link">
+              <NavLink exact to="/statics" activeClassName="-active">
+                Statics
+              </NavLink>
+            </li>
+            <li>
               <NavLink
                 exact
                 to={`/game/${token}`}
@@ -94,6 +100,10 @@ export default function App() {
 
           <Route exact path="/bestscore">
             <BestScore />
+          </Route>
+
+          <Route exact path="/statics">
+            <Statics />
           </Route>
 
           <Route exact path="/game/:id">
