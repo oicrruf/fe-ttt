@@ -1,9 +1,83 @@
-.mainContainer {
-  display: flex;
-}
+/* .mainContainer {
+  display: unset;
+} */
 .link {
   padding: 7.5px 15px 7.5px 15px;
 }
 .link .-active {
   font-weight: bold;
 }
+
+#container-hash {
+  display: flex;
+  justify-content: center;
+}
+
+/* Start Hash design */
+
+.bg {
+  background: #282C34;
+  display: grid;
+  width: 60%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin-top: 50px;
+  border-radius: 5%;
+}
+
+.region {
+  background-color: #4F46E5;
+  cursor: pointer;
+  height: 25vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+#region-1 {
+  border-radius: 5% 0% 0%;
+}
+
+#region-3 {
+  border-radius: 0% 5% 0% 0%;
+}
+
+#region-7 {
+  border-radius: 0% 0% 0% 5%;
+}
+
+#region-9 {
+  border-radius: 0% 0% 5%;
+}
+
+/* End Hash design */
+
+/* 
+#all-regions {
+}
+
+#region-1, #region-4{
+  border-bottom: 3px black solid;
+  border-right: 3px black solid;
+}
+#region-2, #region-5 {
+  border-bottom: 3px black solid;
+}
+#region-3, #region-6 {
+  border-left: 3px black solid;
+  border-bottom: 3px black solid;
+}
+#region-7 {
+  border-right: 3px black solid;
+}
+#region-9 {
+  border-left: 3px black solid;
+}
+
+.region {
+  height: 20vh;
+  width: 20vh;
+}
+
+*/

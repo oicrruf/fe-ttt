@@ -1,4 +1,5 @@
 import React from "react";
+import { Hash } from "./Hash";
 import { TicTacToeBtns } from "./TicTacToeBtns";
 
 const Home = () => {
@@ -13,6 +14,10 @@ const Home = () => {
         </div>
       </div>
       <TicTacToeBtns />
+      <div id="container-hash">
+        <Hash/>
+      </div>
+      
     </>
   );
 };
