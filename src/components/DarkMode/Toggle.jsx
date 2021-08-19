@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import "./Toggle.css";
+import { ThemeContext } from "../../context/themeContext";
 
-export const Toggle = ({ context }) => {
-  const { theme, setTheme } = useContext(context);
+export const Toggle = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
 
   function isDark() {
     return theme === "dark";
@@ -14,7 +15,7 @@ export const Toggle = ({ context }) => {
 
   return (
     <>
-      <label className="inline" htmlFor="chk">
+      <label className="inline cursor-pointer" htmlFor="chk">
         DarkMode:
       </label>
       <div className="inline-flex items-center">

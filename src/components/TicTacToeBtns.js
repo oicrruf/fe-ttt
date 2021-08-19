@@ -43,63 +43,99 @@ const TicTacToeBtns = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-primary">
       <table>
         <tbody>
           <tr>
             <td>
-              <button ref={p1} onClick={() => selectRegion(1)}>
+              <button
+                className="text-accent"
+                ref={p1}
+                onClick={() => selectRegion(1)}
+              >
                 <FaRegTimesCircle size="50" />
               </button>
             </td>
             <td>
-              <button ref={p2} onClick={() => selectRegion(2)}>
+              <button
+                className="text-accent"
+                ref={p2}
+                onClick={() => selectRegion(2)}
+              >
                 <FaRegCircle size="50" />
               </button>
             </td>
             <td>
-              <button ref={p3} onClick={() => selectRegion(3)}>
+              <button
+                className="text-accent"
+                ref={p3}
+                onClick={() => selectRegion(3)}
+              >
                 <FaRegTimesCircle size="50" />
               </button>
             </td>
           </tr>
           <tr>
             <td>
-              <button ref={p4} onClick={() => selectRegion(4)}>
+              <button
+                className="text-accent"
+                ref={p4}
+                onClick={() => selectRegion(4)}
+              >
                 <FaRegCircle size="50" />
               </button>
             </td>
             <td>
-              <button ref={p5} onClick={() => selectRegion(5)}>
+              <button
+                className="text-accent"
+                ref={p5}
+                onClick={() => selectRegion(5)}
+              >
                 <FaRegTimesCircle size="50" />
               </button>
             </td>
             <td>
-              <button ref={p6} onClick={() => selectRegion(6)}>
+              <button
+                className="text-accent"
+                ref={p6}
+                onClick={() => selectRegion(6)}
+              >
                 <FaRegCircle size="50" />
               </button>
             </td>
           </tr>
           <tr>
             <td>
-              <button ref={p7} onClick={() => selectRegion(7)}>
+              <button
+                className="text-accent"
+                ref={p7}
+                onClick={() => selectRegion(7)}
+              >
                 <FaRegCircle size="50" />
               </button>
             </td>
             <td>
-              <button ref={p8} onClick={() => selectRegion(8)}>
+              <button
+                className="text-accent"
+                ref={p8}
+                onClick={() => selectRegion(8)}
+              >
                 <FaRegCircle size="50" />
               </button>
             </td>
             <td>
-              <button ref={p9} onClick={() => selectRegion(9)}>
+              <button
+                className="text-accent"
+                ref={p9}
+                onClick={() => selectRegion(9)}
+              >
                 <FaRegTimesCircle size="50" />
               </button>
             </td>
           </tr>
         </tbody>
       </table>
-      <h4>Le has picado {click} veces</h4>
+      <h4 className="text-primary">Le has picado {click} veces</h4>
     </div>
   );
 };

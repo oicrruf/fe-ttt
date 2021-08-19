@@ -28,8 +28,9 @@ export default function App() {
   return (
     <Router>
       <ThemeProvider>
-        <div className="mainContainer bg-white dark:bg-black">
+        <div className="mainContainer bg-secondary">
           <nav>
+            <Toggle />
             <ul>
               <li className="link text-black dark:text-white">
                 <NavLink exact to={"/"} activeClassName="-active">
@@ -75,9 +76,6 @@ export default function App() {
                 <NavLink exact to="/statics" activeClassName="-active">
                   Statics
                 </NavLink>
-              </li>
-              <li className="link flex text-black dark:text-white">
-                <Toggle context={ThemeContext}></Toggle>
               </li>
             </ul>
           </nav>
