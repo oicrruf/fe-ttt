@@ -15,7 +15,7 @@ export const Toggle = () => {
 
   return (
     <>
-      <label className="inline cursor-pointer" htmlFor="chk">
+      <label className="inline cursor-pointer text-primary" htmlFor="chk">
         DarkMode:
       </label>
       <div className="inline-flex items-center">

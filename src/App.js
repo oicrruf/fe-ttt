@@ -32,37 +32,37 @@ export default function App() {
           <nav>
             <Toggle />
             <ul>
-              <li className="link text-black dark:text-white">
+              <li className="link text-primary">
                 <NavLink exact to={"/"} activeClassName="-active">
                   Home
                 </NavLink>
               </li>
-              <li className="link  text-black dark:text-white">
+              <li className="link  text-primary">
                 <NavLink exact to="/login" activeClassName="-active">
                   Login
                 </NavLink>
               </li>
-              <li className="link  text-black dark:text-white">
+              <li className="link  text-primary">
                 <NavLink exact to="/register" activeClassName="-active">
                   Register
                 </NavLink>
               </li>
-              <li className="link  text-black dark:text-white">
+              <li className="link  text-primary">
                 <NavLink exact to="/friends" activeClassName="-active">
                   Friends
                 </NavLink>
               </li>
-              <li className="link  text-black dark:text-white">
+              <li className="link  text-primary">
                 <NavLink exact to="/score" activeClassName="-active">
                   Score
                 </NavLink>
               </li>
-              <li className="link  text-black dark:text-white">
+              <li className="link  text-primary">
                 <NavLink exact to="/bestscore" activeClassName="-active">
                   Best Score
                 </NavLink>
               </li>
-              <li className="link  text-black dark:text-white">
+              <li className="link  text-primary">
                 <NavLink
                   exact
                   to={`/game/${token}`}
@@ -72,7 +72,7 @@ export default function App() {
                   New Game
                 </NavLink>
               </li>
-              <li className="link">
+              <li className="link text-primary">
                 <NavLink exact to="/statics" activeClassName="-active">
                   Statics
                 </NavLink>
