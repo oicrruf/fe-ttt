@@ -1,6 +1,10 @@
-/* .mainContainer {
-  display: unset;
-} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mainContainer {
+  display: flex;
+}
 .link {
   padding: 7.5px 15px 7.5px 15px;
 }
@@ -16,7 +20,7 @@
 /* Start Hash design */
 
 .bg {
-  background: #282C34;
+  background: #282c34;
   display: grid;
   width: 60%;
   min-height: 45vh;
@@ -29,7 +33,7 @@
 }
 
 .region {
-  background-color: #4F46E5;
+  background-color: #4f46e5;
   cursor: pointer;
   height: 60vh;
   width: 100%;

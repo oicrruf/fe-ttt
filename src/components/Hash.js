@@ -5,59 +5,60 @@ const selectRegion = (id) => {
   console.log(id);
 };
 
-const iconStyle = { color: "white" }
+const iconStyle = { color: "white" };
 
 const Hash = () => {
   return (
     <div className="bg">
-        <div className="region" id="region-1"> 
-          <button onClick={() => selectRegion(1)}>
-                <FaRegTimesCircle style={iconStyle} size="50" />
-          </button> 
-        </div>
-        <div className="region"> 
-          <button onClick={() => selectRegion(2)}>
-                <FaRegCircle style={iconStyle} size="50" />
-          </button> 
-        </div>
-        <div className="region" id="region-3"> 
-          <button onClick={() => selectRegion(3)}>
-                <FaRegTimesCircle style={iconStyle} size="50" />
-          </button> 
-        </div>
-        <div className="region"> 
-          <button onClick={() => selectRegion(4)}>
-                <FaRegCircle style={iconStyle} size="50" />
-          </button> 
-        </div>
-        <div className="region"> 
-          <button onClick={() => selectRegion(5)}>
-                <FaRegTimesCircle style={iconStyle} size="50" />
-          </button> 
-        </div>
-        <div className="region"> 
-          <button onClick={() => selectRegion(6)}>
-                <FaRegCircle style={iconStyle} size="50" />
-          </button> 
-        </div>
-        <div className="region" id="region-7"> 
-          <button onClick={() => selectRegion(7)}>
-                <FaRegTimesCircle style={iconStyle} size="50" />
-          </button> 
-        </div>
-        <div className="region"> 
-          <button onClick={() => selectRegion(8)}>
-                <FaRegCircle style={iconStyle} size="50" />
-          </button> 
-        </div>
-        <div className="region" id="region-9"> 
-          <button onClick={() => selectRegion(9)}>
-                <FaRegTimesCircle style={iconStyle} size="50" />
-          </button> 
-        </div>
+      <div className="region" id="region-1">
+        <button onClick={() => selectRegion(1)}>
+          <FaRegTimesCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region">
+        <button onClick={() => selectRegion(2)}>
+          <FaRegCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region" id="region-3">
+        <button onClick={() => selectRegion(3)}>
+          <FaRegTimesCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region">
+        <button onClick={() => selectRegion(4)}>
+          <FaRegCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region">
+        <button onClick={() => selectRegion(5)}>
+          <FaRegTimesCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region">
+        <button onClick={() => selectRegion(6)}>
+          <FaRegCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region" id="region-7">
+        <button onClick={() => selectRegion(7)}>
+          <FaRegTimesCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region">
+        <button onClick={() => selectRegion(8)}>
+          <FaRegCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region" id="region-9">
+        <button onClick={() => selectRegion(9)}>
+          <FaRegTimesCircle style={iconStyle} size="50" />
+        </button>
+      </div>
     </div>
-    );
-    {/* <div>
+  );
+  {
+    /* <div>
       <table id="all-regions">
         <tbody> 
           <tr>
@@ -113,7 +114,8 @@ const Hash = () => {
           </tr>
         </tbody>
       </table>
-    </div> */}
+    </div> */
+  }
 };
 
 export { Hash };
