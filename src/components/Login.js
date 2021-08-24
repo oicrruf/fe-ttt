@@ -46,9 +46,9 @@ function Login() {
           handleChange,
           handleBlur,
         }) => (
-          <form className="formReg" onSubmit={handleSubmit}>
+          <form className="formReg bg-primary" onSubmit={handleSubmit}>
             {console.log(errors)}
-            <label>Usuario</label>
+            <label className="text-primary">Usuario</label>
             <input
               id="nombre"
               className="registroInput"

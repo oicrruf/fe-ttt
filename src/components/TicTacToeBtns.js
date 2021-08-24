@@ -49,7 +49,7 @@ const TicTacToeBtns = () => {
           <tr>
             <td>
               <button
-                className="text-primary"
+                  className="text-accent"
                 ref={p1}
                 onClick={() => selectRegion(1)}
               >
@@ -58,7 +58,7 @@ const TicTacToeBtns = () => {
             </td>
             <td>
               <button
-                className="text-primary"
+                  className="text-accent"
                 ref={p2}
                 onClick={() => selectRegion(2)}
               >
@@ -67,7 +67,7 @@ const TicTacToeBtns = () => {
             </td>
             <td>
               <button
-                className="text-primary"
+                  className="text-accent"
                 ref={p3}
                 onClick={() => selectRegion(3)}
               >
@@ -78,7 +78,7 @@ const TicTacToeBtns = () => {
           <tr>
             <td>
               <button
-                className="text-primary"
+                  className="text-accent"
                 ref={p4}
                 onClick={() => selectRegion(4)}
               >
@@ -87,7 +87,7 @@ const TicTacToeBtns = () => {
             </td>
             <td>
               <button
-                className="text-primary"
+                  className="text-accent"
                 ref={p5}
                 onClick={() => selectRegion(5)}
               >
@@ -96,7 +96,7 @@ const TicTacToeBtns = () => {
             </td>
             <td>
               <button
-                className="text-primary"
+                  className="text-accent"
                 ref={p6}
                 onClick={() => selectRegion(6)}
               >
@@ -107,7 +107,7 @@ const TicTacToeBtns = () => {
           <tr>
             <td>
               <button
-                className="text-primary"
+                  className="text-accent"
                 ref={p7}
                 onClick={() => selectRegion(7)}
               >
@@ -116,7 +116,7 @@ const TicTacToeBtns = () => {
             </td>
             <td>
               <button
-                className="text-primary"
+                  className="text-accent"
                 ref={p8}
                 onClick={() => selectRegion(8)}
               >
@@ -125,7 +125,7 @@ const TicTacToeBtns = () => {
             </td>
             <td>
               <button
-                className="text-primary"
+                  className="text-accent"
                 ref={p9}
                 onClick={() => selectRegion(9)}
               >
