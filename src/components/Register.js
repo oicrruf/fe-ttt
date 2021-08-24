@@ -8,7 +8,7 @@ function Register() {
   const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
 
   return (
-    <Formik 
+    <Formik
       initialValues={{
         user: "",
         name: "",
@@ -80,7 +80,7 @@ function Register() {
         handleBlur,
       }) => (
         <form className="bg-primary" onSubmit={handleSubmit}>
-          <label className='text-primary'>User</label>
+          <label className="text-primary">User</label>
           <input
             id="user"
             className="registroInput"
@@ -94,7 +94,7 @@ function Register() {
             <div className="error">{errors.user}</div>
           )}
 
-          <label className='text-primary'>Name</label>
+          <label className="text-primary">Name</label>
           <input
             id="name"
             className="registroInput"
@@ -108,7 +108,7 @@ function Register() {
             <div className="error">{errors.name}</div>
           )}
 
-          <label className='text-primary'>Password</label>
+          <label className="text-primary">Password</label>
           <input
             id="password"
             className="registroInput"
@@ -122,7 +122,7 @@ function Register() {
             <div className="error">{errors.password}</div>
           )}
 
-          <label className='text-primary'>Repeat password</label>
+          <label className="text-primary">Repeat password</label>
           <input
             id="repeat_pass"
             className="registroInput"
@@ -136,7 +136,7 @@ function Register() {
             <div className="error">{errors.repeat_pass}</div>
           )}
 
-          <label className='text-primary'>E-mail</label>
+          <label className="text-primary">E-mail</label>
           <input
             id="email"
             className="registroInput"
@@ -150,8 +150,8 @@ function Register() {
             <div className="error">{errors.email}</div>
           )}
           <br />
-          <label className='text-primary'>
-            <input id="terminos" type="checkbox"  />
+          <label className="text-primary">
+            <input id="terminos" type="checkbox" />
             Acepto los terminos y condiciones
           </label>
 

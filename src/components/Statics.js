@@ -7,7 +7,7 @@ function Statics() {
     labels: ["Ganados", "Perdidos", "Empatados"],
     datasets: [
       {
-        label : "Juegos jugados",
+        label: "Juegos jugados",
         backgroundColor: "rgb(238, 229, 217)",
         borderColor: "black",
         backdropColor: "#f7fafc",
@@ -23,8 +23,11 @@ function Statics() {
     // color: '#f7fafc',
   };
   return (
-    <div className="bg-primary text-primary" style={{ width: 100 % Bar, height: "500px", color: "white" }}>
-      <h2 className='text-primary'>Estadisticas del juego</h2>
+    <div
+      className="bg-primary text-primary"
+      style={{ width: 100 % Bar, height: "500px", color: "white" }}
+    >
+      <h2 className="text-primary">Estadisticas del juego</h2>
       <Bar data={data} options={opciones} />
     </div>
   );

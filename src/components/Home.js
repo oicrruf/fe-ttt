@@ -1,6 +1,7 @@
-import { TicTacToeBtns } from "./TicTacToeBtns";
 import React from "react";
 import Swal from "sweetalert2";
+import { Hash } from "./Hash";
+import { TicTacToeBtns } from "./TicTacToeBtns";
 
 const Home = () => {
   return (
@@ -14,6 +15,9 @@ const Home = () => {
         </div>
       </div>
       <TicTacToeBtns />
+      <div id="container-hash">
+        <Hash />
+      </div>
     </>
   );
 };
