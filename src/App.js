@@ -6,17 +6,17 @@ import {
   Switch,
 } from "react-router-dom";
 import "./App.css";
+import { Content, MainContainer } from "./components/atoms";
 import { BestScore } from "./components/BestScore";
+import { Toggle } from "./components/DarkMode/Toggle";
 import { Friends } from "./components/Friends";
 import { Game } from "./components/Game";
 import { Home } from "./components/Home";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { Score } from "./components/Score";
-import { ThemeProvider } from "./context/themeContext";
-import { Toggle } from "./components/DarkMode/Toggle";
-import { ThemeContext } from "./context/themeContext";
 import { Statics } from "./components/Statics";
+import { ThemeProvider } from "./context/themeContext";
 
 export default function App() {
   const [token, setToken] = useState(Date.now());
@@ -28,7 +28,7 @@ export default function App() {
   return (
     <Router>
       <ThemeProvider>
-        <div className="mainContainer bg-secondary">
+        <MainContainer>
           <nav>
             <Toggle />
             <ul>
@@ -84,37 +84,53 @@ export default function App() {
             renders the first one that matches the current URL. */}
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Content>
+                <Home />
+              </Content>
             </Route>
 
             <Route exact path="/login">
-              <Login />
+              <Content>
+                <Login />
+              </Content>
             </Route>
 
             <Route exact path="/register">
-              <Register />
+              <Content>
+                <Register />
+              </Content>
             </Route>
 
             <Route exact path="/friends">
-              <Friends />
+              <Content>
+                <Friends />
+              </Content>
             </Route>
 
             <Route exact path="/score">
-              <Score />
+              <Content>
+                <Score />
+              </Content>
             </Route>
 
             <Route exact path="/bestscore">
-              <BestScore />
+              <Content>
+                <BestScore />
+              </Content>
             </Route>
 
             <Route exact path="/game/:id">
-              <Game />
+              <Content>
+                <Game />
+              </Content>
             </Route>
             <Route exact path="/statics">
-              <Statics />
+              <Content>
+                <Statics />
+              </Content>
             </Route>
           </Switch>
-        </div>
+        </MainContainer>
       </ThemeProvider>
     </Router>
   );

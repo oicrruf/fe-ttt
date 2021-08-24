@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.mainContainer {
-  display: flex;
-}
 .link {
   padding: 7.5px 15px 7.5px 15px;
 }
@@ -57,34 +54,3 @@
 #region-9 {
   border-radius: 0% 0% 5%;
 }
-
-/* End Hash design */
-
-/* 
-#all-regions {
-}
-
-#region-1, #region-4{
-  border-bottom: 3px black solid;
-  border-right: 3px black solid;
-}
-#region-2, #region-5 {
-  border-bottom: 3px black solid;
-}
-#region-3, #region-6 {
-  border-left: 3px black solid;
-  border-bottom: 3px black solid;
-}
-#region-7 {
-  border-right: 3px black solid;
-}
-#region-9 {
-  border-left: 3px black solid;
-}
-
-.region {
-  height: 20vh;
-  width: 20vh;
-}
-
-*/
