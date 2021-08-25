@@ -1,29 +1,21 @@
-import { useState, useRef, useEffect } from "react";
-import React from "react";
-import { FaRegTimesCircle, FaRegCircle } from "react-icons/fa";
+import React, { useEffect, useRef } from "react";
+import { FaRegCircle, FaRegTimesCircle } from "react-icons/fa";
+
+const iconStyle = { color: "white" };
 
 const TicTacToeBtns = () => {
-  const [number, setNumber] = useState(0);
-  const [click, setClick] = useState(0);
-
-  const p1 = useRef(1);
-  const p2 = useRef(2);
-  const p3 = useRef(3);
-  const p4 = useRef(4);
-  const p5 = useRef(5);
-  const p6 = useRef(6);
-  const p7 = useRef(7);
-  const p8 = useRef(8);
-  const p9 = useRef(9);
-
-  const sumar = () => {
-    setNumber(number + 1);
-    setClick(click + 1);
-  };
+  const p1 = useRef();
+  const p2 = useRef();
+  const p3 = useRef();
+  const p4 = useRef();
+  const p5 = useRef();
+  const p6 = useRef();
+  const p7 = useRef();
+  const p8 = useRef();
+  const p9 = useRef();
 
   const selectRegion = (id) => {
     console.log(id);
-    sumar();
   };
 
   useEffect(() => {
@@ -43,99 +35,52 @@ const TicTacToeBtns = () => {
   }, []);
 
   return (
-    <div className="bg-primary">
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <button
-                className="text-accent"
-                ref={p1}
-                onClick={() => selectRegion(1)}
-              >
-                <FaRegTimesCircle size="50" />
-              </button>
-            </td>
-            <td>
-              <button
-                className="text-accent"
-                ref={p2}
-                onClick={() => selectRegion(2)}
-              >
-                <FaRegCircle size="50" />
-              </button>
-            </td>
-            <td>
-              <button
-                className="text-accent"
-                ref={p3}
-                onClick={() => selectRegion(3)}
-              >
-                <FaRegTimesCircle size="50" />
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <button
-                className="text-accent"
-                ref={p4}
-                onClick={() => selectRegion(4)}
-              >
-                <FaRegCircle size="50" />
-              </button>
-            </td>
-            <td>
-              <button
-                className="text-accent"
-                ref={p5}
-                onClick={() => selectRegion(5)}
-              >
-                <FaRegTimesCircle size="50" />
-              </button>
-            </td>
-            <td>
-              <button
-                className="text-accent"
-                ref={p6}
-                onClick={() => selectRegion(6)}
-              >
-                <FaRegCircle size="50" />
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <button
-                className="text-accent"
-                ref={p7}
-                onClick={() => selectRegion(7)}
-              >
-                <FaRegCircle size="50" />
-              </button>
-            </td>
-            <td>
-              <button
-                className="text-accent"
-                ref={p8}
-                onClick={() => selectRegion(8)}
-              >
-                <FaRegCircle size="50" />
-              </button>
-            </td>
-            <td>
-              <button
-                className="text-accent"
-                ref={p9}
-                onClick={() => selectRegion(9)}
-              >
-                <FaRegTimesCircle size="50" />
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <h4 className="text-primary">Le has picado {click} veces</h4>
+    <div className="bg">
+      <div className="region" id="region-1">
+        <button ref={p1} onClick={() => selectRegion(1)}>
+          <FaRegTimesCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region">
+        <button ref={p2} onClick={() => selectRegion(2)}>
+          <FaRegCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region" id="region-3">
+        <button ref={p3} onClick={() => selectRegion(3)}>
+          <FaRegTimesCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region">
+        <button ref={p4} onClick={() => selectRegion(4)}>
+          <FaRegCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region">
+        <button ref={p5} onClick={() => selectRegion(5)}>
+          <FaRegTimesCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region">
+        <button ref={p6} onClick={() => selectRegion(6)}>
+          <FaRegCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region" id="region-7">
+        <button ref={p7} onClick={() => selectRegion(7)}>
+          <FaRegTimesCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region">
+        <button ref={p8} onClick={() => selectRegion(8)}>
+          <FaRegCircle style={iconStyle} size="50" />
+        </button>
+      </div>
+      <div className="region" id="region-9">
+        <button ref={p9} onClick={() => selectRegion(9)}>
+          <FaRegTimesCircle style={iconStyle} size="50" />
+        </button>
+      </div>
     </div>
   );
 };
