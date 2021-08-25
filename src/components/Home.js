@@ -1,23 +1,11 @@
 import React from "react";
 import Swal from "sweetalert2";
-import { Hash } from "./Hash";
-import { TicTacToeBtns } from "./TicTacToeBtns";
+import { TicTacToe } from "../components/organisms";
 
 const Home = () => {
   return (
     <>
-      <div className="bg-primary">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-          <h2 className="text-3xl font-extrabold tracking-tight  sm:text-4xl">
-            <span className="block text-primary">Tic Tac Toe Game</span>
-            <span className="block text-accent">Master en Code - G4</span>
-          </h2>
-        </div>
-      </div>
-      <TicTacToeBtns />
-      <div id="container-hash">
-        <Hash />
-      </div>
+      <TicTacToe />
     </>
   );
 };
@@ -58,8 +46,6 @@ const saveLocalStorage = () => {
     }
   });
 };
-
-//console.log(nickname)
 
 saveLocalStorage();
 
