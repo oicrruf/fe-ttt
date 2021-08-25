@@ -6,7 +6,8 @@
   @apply light;
 }
 
-body {
+*:focus {
+  outline: none !important;
 }
 
 code {

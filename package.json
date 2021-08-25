@@ -7,8 +7,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "formik": "^2.2.9",
     "chart.js": "^3.5.0",
+    "formik": "^2.2.9",
     "mime-types": "^2.1.31",
     "react": "^17.0.2",
     "react-chartjs-2": "^3.0.4",
@@ -16,6 +16,8 @@
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
     "sweetalert2": "^11.1.2",
     "web-vitals": "^1.0.1"
   },

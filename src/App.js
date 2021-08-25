@@ -7,16 +7,17 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import { Content, MainContainer } from "./components/atoms";
+import { Login } from "./components/molecules";
 import { BestScore } from "./components/BestScore";
 import { Toggle } from "./components/DarkMode/Toggle";
 import { Friends } from "./components/Friends";
 import { Game } from "./components/Game";
 import { Home } from "./components/Home";
-import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { Score } from "./components/Score";
 import { Statics } from "./components/Statics";
 import { ThemeProvider } from "./context/themeContext";
+import "semantic-ui-css/semantic.min.css";
 
 export default function App() {
   const [token, setToken] = useState(Date.now());
