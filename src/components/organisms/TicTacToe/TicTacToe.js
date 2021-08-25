@@ -3,7 +3,7 @@ import { FaRegCircle, FaRegTimesCircle } from "react-icons/fa";
 
 const iconStyle = { color: "white" };
 
-const TicTacToeBtns = () => {
+const TicTacToe = () => {
   const p1 = useRef();
   const p2 = useRef();
   const p3 = useRef();
@@ -85,4 +85,4 @@ const TicTacToeBtns = () => {
   );
 };
 
-export { TicTacToeBtns };
+export default TicTacToe;

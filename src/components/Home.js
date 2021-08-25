@@ -1,11 +1,11 @@
 import React from "react";
 import Swal from "sweetalert2";
-import { TicTacToeBtns } from "./TicTacToeBtns";
+import { TicTacToe } from "../components/organisms";
 
 const Home = () => {
   return (
     <>
-      <TicTacToeBtns />
+      <TicTacToe />
     </>
   );
 };
