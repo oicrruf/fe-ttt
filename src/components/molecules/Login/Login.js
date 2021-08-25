@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
 import { Formik } from "formik";
-import "./Formulario/FormReg.css";
+import React from "react";
+import { Button, Input } from "semantic-ui-react";
+import { Label } from "../../atoms";
 
-function Login() {
+const Login = () => {
   return (
-    <>
+    <div className="m-formContainer">
       <Formik
         initialValues={{
           nombre: "",
@@ -14,27 +15,21 @@ function Login() {
           let errores = {};
           if (!valores.nombre) {
             errores.nombre = "Por favor ingresa un nombre";
-            console.log("nombre?");
           } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
             errores.nombre = "El nombre solo puede contener letras y espacios";
           }
           if (!valores.password) {
             errores.password = "Por favor ingrese su password";
-            console.log("password?");
           }
           return errores;
         }}
         onSubmit={(valores, { resetForm }) => {
           resetForm();
-          console.log("Formulario enviado");
-
           const user = {
             nombre: valores.nombre,
             password: valores.password,
           };
-
           const userString = JSON.stringify(user);
-
           localStorage.setItem("Usuario", userString);
         }}
       >
@@ -46,43 +41,49 @@ function Login() {
           handleChange,
           handleBlur,
         }) => (
-          <form className="formReg bg-primary" onSubmit={handleSubmit}>
+          <form
+            className="shadow-lg w-80 p-4 flex flex-col bg-primary rounded-lg"
+            onSubmit={handleSubmit}
+          >
             {console.log(errors)}
-            <label className="text-primary">Usuario</label>
-            <input
+            <Label>Usuario</Label>
+            <Input
+              icon="user"
               id="nombre"
-              className="registroInput"
+              className="pb-4"
               type="text"
               placeholder="Ingresa tu usuario"
               value={values.nombre}
               onChange={handleChange}
               onBlur={handleBlur}
             />
+
             {touched.nombre && errors.nombre && (
-              <div className="error">{errors.nombre}</div>
+              <div className="error pb-4 text-red-600">{errors.nombre}</div>
             )}
 
-            <label>Password</label>
-            <input
+            <Label>Password</Label>
+            <Input
+              icon="lock"
               id="password"
-              className="registroInput"
+              className="pb-4"
               type="password"
               placeholder="Capture la contraseña"
               value={values.password}
               onChange={handleChange}
               onBlur={handleBlur}
             />
+
             {touched.password && errors.password && (
-              <div className="error">{errors.password}</div>
+              <div className="error pb-4 text-red-600">{errors.password}</div>
             )}
 
-            <button className="btnRegistro">Login</button>
-            {/*  <Button onClick={submit} /> */}
+            <Button primary>Login</Button>
           </form>
         )}
       </Formik>
-    </>
+    </div>
   );
-}
+};
 
-export { Login };
+export default Login;
