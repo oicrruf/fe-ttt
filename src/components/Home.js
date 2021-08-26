@@ -11,6 +11,7 @@ const Home = () => {
 };
 
 const saveLocalStorage = () => {
+  
   let nickname = Swal.fire({
     input: "text",
     inputLabel: "Ingresa nickname si no estas registrado",
@@ -19,7 +20,7 @@ const saveLocalStorage = () => {
       "aria-label": "Escribe aqui",
     },
     showCancelButton: true,
-    //timer: "4000"   //cierra automaticamente la ventana
+    
 
     preConfirm: (login) => {
       return fetch(`//api.github.com/users/${login}`)
@@ -47,6 +48,11 @@ const saveLocalStorage = () => {
   });
 };
 
-saveLocalStorage();
+if (localStorage.length === 1){
+  saveLocalStorage();
+}
+
+
+
 
 export { Home };
