@@ -14,11 +14,11 @@ export const Toggle = () => {
   }
 
   return (
-    <>
+    <div className="inline-flex items-center pb-4 pl-3">
       <label className="inline cursor-pointer text-primary" htmlFor="chk">
         DarkMode:
       </label>
-      <div className="inline-flex items-center">
+      <div className="inline items-center">
         <input
           type="checkbox"
           className="checkbox"
@@ -30,6 +30,6 @@ export const Toggle = () => {
           <div className="ball"></div>
         </label>
       </div>
-    </>
+    </div>
   );
 };
