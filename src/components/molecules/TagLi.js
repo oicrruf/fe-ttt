@@ -1,21 +1,14 @@
-import React from 'react'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-import {
-    NavLink,
-  } from "react-router-dom";
+const TagLi = ({ to, onClickContent, name }) => {
+  return (
+    <li className="link text-primary">
+      <NavLink exact to={to} activeClassName="-active" onClick={onClickContent}>
+        {name}
+      </NavLink>
+    </li>
+  );
+};
 
-function TagLi(props) {
-
-    return (
-        <li className="link text-primary">
-            <NavLink exact to={props.to} 
-            activeClassName="-active"  
-            onClick={props.onClickContent}>
-                {props.name}
-            </NavLink>
-        </li>
-
-    )
-}
-
-export default TagLi
+export default TagLi;
