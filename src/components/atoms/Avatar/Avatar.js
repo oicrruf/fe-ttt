@@ -3,8 +3,6 @@ import { Image } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 const Avatar = ({ image }) => {
-  console.log(image);
-
   return (
     <Image
       className="p-4"

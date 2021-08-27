@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   NavLink,
@@ -22,10 +22,22 @@ import TagLi from "./components/molecules/TagLi";
 
 export default function App() {
   const [token, setToken] = useState(Date.now());
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   function newToken() {
     setToken(Date.now());
   }
+
+  useEffect(() => {
+    !localStorage.getItem("@ttt_nickname")
+      ? setIsAuthenticated(false)
+      : setIsAuthenticated(true);
+  }, []);
+
+  // useEffect(() => {
+  //   isAuthenticated != null &&
+  //     console.log(`El estado de la sesión es ${isAuthenticated}`);
+  // }, [isAuthenticated]);
 
   return (
     <Router>
@@ -96,8 +108,7 @@ export default function App() {
             </Route>
             <Route exact path="/statics">
               <Content>
-                {/* <Redirect to="/login" /> */}
-                <Statics />
+                {isAuthenticated ? <Statics /> : <Redirect to="/login" />}
               </Content>
             </Route>
           </Switch>
