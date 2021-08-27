@@ -4,9 +4,10 @@ import {
   NavLink,
   Route,
   Switch,
+  Redirect,
 } from "react-router-dom";
 import "./App.css";
-import { Content, MainContainer } from "./components/atoms";
+import { Content, MainContainer, Avatar } from "./components/atoms";
 import { Login } from "./components/molecules";
 import { BestScore } from "./components/BestScore";
 import { Toggle } from "./components/DarkMode/Toggle";
@@ -18,8 +19,6 @@ import { Score } from "./components/Score";
 import { Statics } from "./components/Statics";
 import { ThemeProvider } from "./context/themeContext";
 import TagLi from "./components/molecules/TagLi";
-
-import "semantic-ui-css/semantic.min.css";
 
 export default function App() {
   const [token, setToken] = useState(Date.now());
@@ -33,41 +32,21 @@ export default function App() {
       <ThemeProvider>
         <MainContainer>
           <nav>
+            <Avatar image={localStorage.getItem("@ttt_nickname")} />
             <Toggle />
             <ul>
+              <TagLi to="/" name="Home" />
+              <TagLi to="/login" name="Login" />
+              <TagLi to="/register" name="Register" />
+              <TagLi to="/friends" name="Friends" />
+              <TagLi to="/score" name="Score" />
+              <TagLi to="/bestscore" name="Best Score" />
               <TagLi
-              to="/"
-              name="Home"
+                to={`/game/${token}`}
+                name="New Game"
+                onClickContent={newToken}
               />
-              <TagLi
-              to="/login"
-              name="Login"
-              />
-              <TagLi
-              to="/register"
-              name="Register"
-              />
-              <TagLi
-              to="/friends"
-              name="Friends"
-              />
-              <TagLi
-              to="/score"
-              name="Score"
-              />
-              <TagLi
-              to="/bestscore"
-              name="Best Score"
-              />
-              <TagLi
-              to={`/game/${token}`}
-              name="New Game"
-              onClickContent={newToken}
-              />
-              <TagLi
-              to="/statics"
-              name="Statics"
-              />
+              <TagLi to="/statics" name="Statics" />
             </ul>
           </nav>
 
@@ -117,6 +96,7 @@ export default function App() {
             </Route>
             <Route exact path="/statics">
               <Content>
+                {/* <Redirect to="/login" /> */}
                 <Statics />
               </Content>
             </Route>

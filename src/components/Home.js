@@ -11,16 +11,14 @@ const Home = () => {
 };
 
 const saveLocalStorage = () => {
-  let nickname = Swal.fire({
+  Swal.fire({
     input: "text",
     inputLabel: "Ingresa nickname si no estas registrado",
-    inputPlaceholder: "Escribe aqui",
+    inputPlaceholder: "Ingresa tu nickname de GitHub",
     inputAttributes: {
-      "aria-label": "Escribe aqui",
+      "aria-label": "Ingresa tu nickname de GitHub",
     },
     showCancelButton: true,
-    //timer: "4000"   //cierra automaticamente la ventana
-
     preConfirm: (login) => {
       return fetch(`//api.github.com/users/${login}`)
         .then((response) => {
@@ -29,7 +27,6 @@ const saveLocalStorage = () => {
           }
           return response.json();
         })
-
         .catch((error) => {
           Swal.resetValidationMessage(`Request failed: ${error}`);
         });
@@ -37,8 +34,10 @@ const saveLocalStorage = () => {
     allowOutsideClick: () => !Swal.isLoading(),
   }).then((resultado) => {
     if (resultado.value) {
-      let nickname = resultado.value;
-      localStorage.setItem("nickname", JSON.stringify(nickname));
+      localStorage.setItem(
+        "@ttt_nickname",
+        JSON.stringify(resultado.value.avatar_url).replaceAll('"', "")
+      );
       Swal.fire({
         title: `${resultado.value.login}'s avatar`,
         imageUrl: resultado.value.avatar_url,
@@ -46,7 +45,8 @@ const saveLocalStorage = () => {
     }
   });
 };
-
-saveLocalStorage();
+if (!localStorage.getItem("@ttt_nickname")) {
+  saveLocalStorage();
+}
 
 export { Home };

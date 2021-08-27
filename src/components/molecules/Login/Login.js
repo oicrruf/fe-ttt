@@ -2,6 +2,7 @@ import { Formik } from "formik";
 import React from "react";
 import { Button, Input } from "semantic-ui-react";
 import { Label } from "../../atoms";
+import "semantic-ui-css/semantic.min.css";
 
 const Login = () => {
   return (
