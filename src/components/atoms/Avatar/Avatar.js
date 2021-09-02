@@ -5,6 +5,7 @@ import "semantic-ui-css/semantic.min.css";
 const Avatar = ({ image }) => {
   return (
     <Image
+      data-testid="avatar-image"
       className="p-4"
       src={
         !image
