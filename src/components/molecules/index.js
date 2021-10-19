@@ -1,3 +1,4 @@
 import Login from "./Login/Login";
+import TagLi from "./TagLi/TagLi";
 
-export { Login };
+export { Login, TagLi };

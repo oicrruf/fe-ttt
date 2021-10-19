@@ -7,10 +7,10 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./App.css";
-import { Content, MainContainer, Avatar } from "./components/atoms";
+import { Content, MainContainer } from "./components/atoms";
+import { SideBar } from "./components/organisms";
 import { Login } from "./components/molecules";
 import { BestScore } from "./components/BestScore";
-import { Toggle } from "./components/DarkMode/Toggle";
 import { Friends } from "./components/Friends";
 import { Game } from "./components/Game";
 import { Home } from "./components/Home";
@@ -18,7 +18,6 @@ import { Register } from "./components/Register";
 import { Score } from "./components/Score";
 import { Statics } from "./components/Statics";
 import { ThemeProvider } from "./context/themeContext";
-import TagLi from "./components/molecules/TagLi";
 
 export default function App() {
   const [token, setToken] = useState(Date.now());
@@ -43,25 +42,7 @@ export default function App() {
     <Router>
       <ThemeProvider>
         <MainContainer>
-          <nav>
-            <Avatar image={localStorage.getItem("@ttt_nickname")} />
-            <Toggle />
-            <ul>
-              <TagLi to="/" name="Home" />
-              <TagLi to="/login" name="Login" />
-              <TagLi to="/register" name="Register" />
-              <TagLi to="/friends" name="Friends" />
-              <TagLi to="/score" name="Score" />
-              <TagLi to="/bestscore" name="Best Score" />
-              <TagLi
-                to={`/game/${token}`}
-                name="New Game"
-                onClickContent={newToken}
-              />
-              <TagLi to="/statics" name="Statics" />
-            </ul>
-          </nav>
-
+          <SideBar />
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <Switch>
