@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Formik, prepareDataForValidation } from "formik";
-import { Button } from "./Formulario/Button.js";
-import { RegistroInput } from "./Formulario/RegistroInput.js";
-import "./Formulario/FormReg.css";
+import { Formik } from "formik";
+import React, { useState } from "react";
+import "semantic-ui-css/semantic.min.css";
+import { Button, Input } from "semantic-ui-react";
+import { Label } from "../../atoms";
+// import "./Formulario/FormReg.css";
 
-function Register() {
+const Register = () => {
   const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
 
   return (
@@ -79,83 +80,96 @@ function Register() {
         handleChange,
         handleBlur,
       }) => (
-        <form className="bg-primary" onSubmit={handleSubmit}>
-          <label className="text-primary">User</label>
-          <input
+        <form
+          className="shadow-lg w-80 p-4 flex flex-col bg-primary rounded-lg"
+          onSubmit={handleSubmit}
+        >
+          <Label>User</Label>
+          <Input
             id="user"
-            className="registroInput"
+            icon="user secret"
+            className="registroInput pb-4"
             type="text"
             placeholder="Capture un usuario"
             value={values.user}
             onChange={handleChange}
             onBlur={handleBlur}
           />
+
           {touched.user && errors.user && (
-            <div className="error">{errors.user}</div>
+            <div className="error pb-4 text-red-600">{errors.user}</div>
           )}
 
-          <label className="text-primary">Name</label>
-          <input
+          <Label>Name</Label>
+          <Input
             id="name"
-            className="registroInput"
+            icon="user"
+            className="registroInput pb-4"
             type="text"
             placeholder="Ingrese su nombre"
             value={values.name}
             onChange={handleChange}
             onBlur={handleBlur}
           />
+
           {touched.name && errors.name && (
-            <div className="error">{errors.name}</div>
+            <div className="error pb-4 text-red-600">{errors.name}</div>
           )}
 
-          <label className="text-primary">Password</label>
-          <input
+          <Label>Password</Label>
+          <Input
             id="password"
-            className="registroInput"
+            icon="lock"
+            className="registroInput pb-4"
             type="password"
             placeholder="Capture la contraseña"
             value={values.password}
             onChange={handleChange}
             onBlur={handleBlur}
           />
+
           {touched.password && errors.password && (
-            <div className="error">{errors.password}</div>
+            <div className="error pb-4 text-red-600">{errors.password}</div>
           )}
 
-          <label className="text-primary">Repeat password</label>
-          <input
+          <Label>Repeat password</Label>
+          <Input
             id="repeat_pass"
-            className="registroInput"
+            icon="lock"
+            className="registroInput pb-4"
             type="password"
             placeholder="Confirme su contraseña"
             value={values.repeat_pass}
             onChange={handleChange}
             onBlur={handleBlur}
           />
+
           {touched.repeat_pass && errors.repeat_pass && (
-            <div className="error">{errors.repeat_pass}</div>
+            <div className="error pb-4 text-red-600">{errors.repeat_pass}</div>
           )}
 
-          <label className="text-primary">E-mail</label>
-          <input
+          <Label>E-mail</Label>
+          <Input
             id="email"
-            className="registroInput"
+            icon="envelope outline"
+            className="registroInput pb-4"
             type="texto"
             placeholder="Capture su correo"
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
           />
+
           {touched.email && errors.email && (
-            <div className="error">{errors.email}</div>
+            <div className="error pb-4 text-red-600">{errors.email}</div>
           )}
           <br />
-          <label className="text-primary">
-            <input id="terminos" type="checkbox" />
+          <Label>
+            <Input id="terminos" type="checkbox" className="pb-5" />
             Acepto los terminos y condiciones
-          </label>
+          </Label>
 
-          <button className="btnRegistro">Enviar</button>
+          <Button primary>Enviar</Button>
           <br />
           {formularioEnviado && (
             <p className="exito">Formulario enviado con exito!</p>
@@ -164,6 +178,6 @@ function Register() {
       )}
     </Formik>
   );
-}
+};
 
-export { Register };
+export default Register;

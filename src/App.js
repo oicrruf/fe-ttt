@@ -9,12 +9,13 @@ import {
 import "./App.css";
 import { Content, MainContainer, Avatar } from "./components/atoms";
 import { Login } from "./components/molecules";
+import { Register } from "./components/molecules";
 import { BestScore } from "./components/BestScore";
 import { Toggle } from "./components/DarkMode/Toggle";
 import { Friends } from "./components/Friends";
 import { Game } from "./components/Game";
 import { Home } from "./components/Home";
-import { Register } from "./components/Register";
+// import { Register } from "./components/Register";
 import { Score } from "./components/Score";
 import { Statics } from "./components/Statics";
 import { ThemeProvider } from "./context/themeContext";
